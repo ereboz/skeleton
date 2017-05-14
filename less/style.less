@@ -1,0 +1,477 @@
+//* Created by javaBoxer on 3/23/2017.
+// TODO: Brian - redo image paths to match that of the server when deployed
+
+
+
+/* ==========================================================================
+Section:
+// Bootstrap LESS variables to reference
+// @screen-xs             480px;
+// @screen-tablet         768px
+// @screen-desktop        992px
+// @screen-lg-desktop     1200px
+
+// Custom to fit footer better on Nexus 10 @800px
+// bootstrap default for tablet is 768px
+========================================================================== */
+
+
+/* Sub-section: LESS variables for this page: index.html
+========================================================================== */
+
+/* DEFINE OUR GLOBAL VARIABLES FOR KEYEDALIKE
+========================================================================== */
+@font-subnav: "Bitter Regular", "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
+@font-nav: "Myriad Pro", Verdana, sans-serif;
+@font-roboto: "Roboto Condensed",sans-serif;
+@font-secondary: "Bitter Regular", "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
+@font-src-sans: "Source Sans Pro", sans-serif;
+@font-montserrat: 'Montserrat', arial, sans-serif;	// unused but nice
+@gray-background: #f5f7f9;
+@white: #fff;
+@white-off: fbfbfb;
+@bg-light-gray: #f5f7f9;
+@bg-hover-blue: #78c4cd;
+@black: #000;
+@white: #fff;
+@green: #47a9b4;
+@carousel-strip: #eff8fa;
+@light-gray1: #e0e0e0;
+@light-gray4: #dddddd;
+@light-gray2: #f8f8f8;
+@light-gray3: #f3f5f6;
+@light-gray4: #d3d3d3;
+@light-gray5: #e0dcdc;
+@light-gray6: #dedada;
+@gray-superlight: #e8e1e1;
+@blue: #29ABE2;
+@blue1: #337ab7;
+@blue2: #286090;
+@cadetblue: #668bae;
+@light-gray-4: #f5f3f3;
+@gray-medium: #7b7a7a;
+@powder-blue: rgba(41, 171, 226, 0.06);
+@white-smoke: #f5f5f5;
+@med-gray: #616161;
+@dark-gray: #333;
+@gray-med1: #ddd;
+@gray-med2: #dcdcdc;
+@gray-med3: #929292;
+@screen-tablet-md-max: 800px;
+@screen-tablet-md-min: 780px;
+
+/* MIXIN'S
+========================================================================== */
+
+
+
+
+
+/* PAGE OVERRIDES
+========================================================================== */
+
+body {
+    font-family: @font-secondary !important;
+    //font-family: @font-src-sans !important;
+}
+// Define width of container for keyedalike specific wrapper
+@media (min-width: 1200px) {
+    .container {
+        width: 1012px;
+    }
+}
+
+.bg-banner {
+    width: 100%;
+    height: 50px;
+    margin: -5px 0 0 0;
+    background-color: @blue;
+    
+    @media (max-width: @screen-tablet) {
+        display: none;
+    }
+}
+
+.banner-phone {
+    margin-top: -12px;
+    .phone-icon {
+        margin: 0 10px 0 0;
+    }
+	.banner-phone-text {
+		font-size: 14px;
+		font-weight: bold;
+	}
+    .free-shipping {
+        text-transform: none;
+    }
+}
+
+.banner-message {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+}
+
+.chat-message {
+    margin-top: -9px;
+}
+
+.wrapper-banner {
+    margin: 20px 0;
+    font-family: @font-subnav;
+    font-size: 12px;
+    color: @white;
+}
+
+//@media (max-width: @container-sm) {
+//    #topnavbar {
+//        padding: 0;
+//    }
+//}
+
+.affix {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+}
+
+
+// TODO-BH: try TBS animation to override hard scroll. can keep #topnavbar above if needed
+// Start TBS affix patch for mobile
+
+//#topnavbar.affix {
+//    position: fixed !important;
+//    top: 19px;
+//    animation: affixFadeIn 0.24s  ease-in;
+//    -webkit-animation: affixFadeIn 0.24s;
+//}
+//
+//@keyframes affixFadeIn {
+//    from {opacity: 0;}
+//    to {opacity: 1;}
+//}
+//
+//@-webkit-keyframes affixFadeIn {
+//    from {opacity: 0;}
+//    to {opacity: 1;}
+//}
+
+// End TBS affix patch for mobile
+
+.wrapper-subnav {
+    background-color: @white;
+    //padding-top: 20px;
+
+    .subnavall {
+        //margin-bottom: 40px;
+        background-color: @black;
+        height: 50px;
+    }
+}
+
+.logo {
+    float: left;
+    margin-top: 8px;
+    
+    img {
+        width: 77px;
+        height: 35px;
+    }
+}
+
+.subnav-left {
+    float: left;
+    margin-top: 8px;
+    font-family: @font-roboto !important;
+    font-size: 24px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    color: @white;
+
+    @media (min-width: @screen-sm-min) {
+        font-size: 24px;
+    }
+	
+	span:first-of-type {
+		margin-right: -6px;
+		font-weight: 300;
+	}
+	
+	span:last-of-type {
+		font-weight: 700;
+	}
+
+		a {
+			&:link {
+				color: @white;
+				text-decoration: none;
+			}
+			&:hover {
+				color: @gray-medium;
+			}
+			&:visited {
+				color: @white;
+			}
+			&:active {
+				color: @white;
+			}
+		}
+}
+
+.search-wrapper {
+    margin-top: 7px;
+}
+
+// start server side generated
+.search {
+    .form-control-inline{
+		&.search-box {
+			width: 80%;
+			float: left;
+		}
+	}
+}
+// end server side generated
+
+.subnav-wrapper {
+    height: 30px;
+    color: @white;
+}
+
+.sub-nav {
+    font-size: 12px;
+
+	li {
+		font-family: @font-subnav;
+		a {
+			&:link {
+				color: @white;
+				text-decoration: none;
+			}
+			&:hover {
+				color: @light-gray1;
+				background-color: @black;
+			}
+			&:visited {
+				color: @white;
+			}
+			&:active {
+				color: @white;
+			}
+		}
+	}
+
+    @media (max-width: @screen-tablet) {
+        display: none;
+    }
+
+    @media (min-width: @screen-desktop) {
+        float: right;
+    }
+}
+
+.main-nav {
+    margin-bottom: 0;
+    background-color: @bg-light-gray;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    li {
+        &:hover {
+			background-color: @blue;
+
+			a {
+				color: @white !important;
+            }
+        }
+    }
+}
+
+#myNavbar {
+    ul li {
+        font-family: @font-nav;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
+.banner-text {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: @cadetblue;
+
+    @media (min-width: @screen-tablet) {
+        font-size: 16px;
+    }
+}
+
+.page-separator {
+    border-bottom: 1px solid @light-gray1;
+    margin-bottom: 40px;
+}
+
+
+
+
+.container-footer {
+	background-color: @dark-gray;
+}
+
+.info-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info-footer {
+    background: @dark-gray;
+	color: @white;
+    padding: 20px;
+    width: 400px;
+    flex-shrink: 1;
+	flex-basis: auto;
+    font-family: @font-subnav;
+    margin-bottom: 15px;
+
+    h3 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+	
+	ul {
+		list-style: none;
+		margin-left: 10px;
+		margin-bottom:25px;
+		padding-left: 5px;
+		
+		li {
+			a {
+				&:link {
+					color: @white;
+					text-decoration: none;
+				}
+				&:hover {
+					color: @gray-medium;
+				}
+				&:visited {
+					color: @white;
+				}
+				&:active {
+					color: @white;
+				}
+			}
+		}
+		
+		a {
+			color: @white;
+			&:hover {
+				color: @blue;
+			}
+		}
+	}
+
+	.phone {
+		font-family: @font-roboto;
+		font-size: 35px;
+		font-weight: bold;
+	}
+		
+	&.footer1 {
+		.padlock-pros {
+			float: left;
+			
+			.logo {
+				width: 300px;
+			}
+		}
+		.contact {
+			float: left;
+			
+			h1 {
+				font-family: inherit;
+			}
+			
+			span {
+				font-family: inherit;
+			}
+		}
+		.logo-affiliates {
+			float: left;
+			
+			.better-business {
+				margin-left: -20px;
+			}
+			
+			.secure {
+				margin-left: 20px;
+			}
+			
+			.credit-cards {
+				margin-left: -24px;
+			}
+		}
+		
+		.copy {
+			float: left;
+		}
+	}
+	
+	&.footer2 {
+		margin-right: 0;
+		margin-top: 13px;
+		
+		.content-left {
+			float: left;
+			margin-bottom: 20px;
+		}
+		.content-right {
+			float: right;
+			margin-bottom: 20px;
+		}
+		
+		@media (min-width: @screen-lg-desktop) {
+			margin-right: 80px;
+		}
+		
+		@media screen and (max-width: @screen-tablet-md-max) and (min-width: @screen-tablet-md-min) {
+			margin-right: 20px;
+		}
+		
+		.social {
+			float: left;
+			width: 100%;
+			
+			li {
+				&.fa {
+					margin: 0 6px;
+				}
+			}
+		}
+	}
+	
+	&.footer3 {
+		margin-top: 13px;
+		
+		.email-wrapper {
+			p {
+				font-size: 12px;
+			}
+		}
+		//Server side
+		
+		.input-group-addon-captchaimage {
+			padding: 0;
+		}
+		
+		.page-action-bar {
+			margin-bottom: 15px;
+		}
+		
+
+	}
+}
+
