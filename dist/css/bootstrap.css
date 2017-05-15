@@ -6820,11 +6820,11 @@ body {
   color: #fff;
 }
 .affix {
-  position: fixed !important;
   top: 0;
   width: 100%;
 }
 .wrapper-subnav {
+  height: 153px;
   background-color: #fff;
 }
 .wrapper-subnav .subnavall {
@@ -6945,6 +6945,9 @@ body {
 .page-separator {
   margin-bottom: 40px;
   border-bottom: 1px solid #e0e0e0;
+}
+.body {
+  height: 400px;
 }
 .container-footer {
   background-color: #333;

@@ -9,11 +9,21 @@
 $(document).ready(function(){
     
     // // affixes top nav to be sticky
-    $('#topnavbar').affix({
+    // $('#topnavbar').affix({
+    //     offset: {
+    //         top: $('#banner').height()
+    //     }
+    // });
+    
+    $(".wrapper-subnav").affix({
         offset: {
             top: $('#banner').height()
         }
     });
+    
+    $("#topnavbar").height($(".wrapper-subnav").height());
+    
+    
 
     $('.product-wrapper').each(function () {
         var salePrice = $(this).find('.sale-price');        // target to center price vertically if no retail price
