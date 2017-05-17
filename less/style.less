@@ -1,7 +1,4 @@
 //* Created by javaBoxer on 3/23/2017.
-// TODO: Brian - redo image paths to match that of the server when deployed
-
-
 
 /* ==========================================================================
 Section:
@@ -25,38 +22,18 @@ Section:
 @font-nav: "Myriad Pro", Verdana, sans-serif;
 @font-roboto: "Roboto Condensed",sans-serif;
 @font-secondary: "Bitter Regular", "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
-@font-src-sans: "Source Sans Pro", sans-serif;
-@font-montserrat: 'Montserrat', arial, sans-serif;	// unused but nice
-@gray-background: #f5f7f9;
-@white: #fff;
-@white-off: fbfbfb;
 @bg-light-gray: #f5f7f9;
-@bg-hover-blue: #78c4cd;
 @black: #000;
 @white: #fff;
-@green: #47a9b4;
-@carousel-strip: #eff8fa;
 @light-gray1: #e0e0e0;
-@light-gray4: #dddddd;
-@light-gray2: #f8f8f8;
-@light-gray3: #f3f5f6;
-@light-gray4: #d3d3d3;
-@light-gray5: #e0dcdc;
-@light-gray6: #dedada;
 @gray-superlight: #e8e1e1;
 @blue: #29ABE2;
-@blue1: #337ab7;
-@blue2: #286090;
 @cadetblue: #668bae;
-@light-gray-4: #f5f3f3;
 @gray-medium: #7b7a7a;
 @powder-blue: rgba(41, 171, 226, 0.06);
 @white-smoke: #f5f5f5;
 @med-gray: #616161;
 @dark-gray: #333;
-@gray-med1: #ddd;
-@gray-med2: #dcdcdc;
-@gray-med3: #929292;
 @screen-tablet-md-max: 800px;
 @screen-tablet-md-min: 780px;
 
@@ -92,6 +69,13 @@ body {
     }
 }
 
+.wrapper-banner {
+    margin: 20px 0;
+    font-family: @font-subnav;
+    font-size: 12px;
+    color: @white;
+}
+
 .banner-phone {
     margin-top: -12px;
     .phone-icon {
@@ -116,46 +100,11 @@ body {
     margin-top: -9px;
 }
 
-.wrapper-banner {
-    margin: 20px 0;
-    font-family: @font-subnav;
-    font-size: 12px;
-    color: @white;
-}
-
-//@media (max-width: @container-sm) {
-//    #topnavbar {
-//        padding: 0;
-//    }
-//}
-
 .affix {
     top: 0;
     width: 100%;
 }
 
-
-// TODO-BH: try TBS animation to override hard scroll. can keep #topnavbar above if needed
-// Start TBS affix patch for mobile
-
-//#topnavbar.affix {
-//    position: fixed !important;
-//    top: 19px;
-//    animation: affixFadeIn 0.24s  ease-in;
-//    -webkit-animation: affixFadeIn 0.24s;
-//}
-//
-//@keyframes affixFadeIn {
-//    from {opacity: 0;}
-//    to {opacity: 1;}
-//}
-//
-//@-webkit-keyframes affixFadeIn {
-//    from {opacity: 0;}
-//    to {opacity: 1;}
-//}
-
-// End TBS affix patch for mobile
 
 #topnavbar {
 
@@ -163,7 +112,7 @@ body {
 
 .wrapper-subnav {
     background-color: @white;
-    height: 153px;
+    height: 100px;
     //padding-top: 20px;
 
     .subnavall {
@@ -310,15 +259,15 @@ body {
     }
 }
 
+.body {
+    min-height: 600px;
+}
+
 .page-separator {
     border-bottom: 1px solid @light-gray1;
     margin-bottom: 40px;
 }
 
-
-.body {
-    height: 400px;
-}
 
 .container-footer {
 	background-color: @dark-gray;

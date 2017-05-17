@@ -1,30 +1,18 @@
 /**
- * Created by javaBoxer on 3/23/2017.
+ * Created by javaBoxer on 5/16/2017.
  */
-
-// Assuming backend is writing the sale price strike through, we can toggle sale sticker in upper left of product.
-// iterate over each product-wrapper and search for value of retail-price.
-// if not empty, then it's on sale. Toggle Less class to display sale sticker in upper left of parent wrapper
 
 $(document).ready(function(){
     
-    // // affixes top nav to be sticky
-    // $('#topnavbar').affix({
-    //     offset: {
-    //         top: $('#banner').height()
-    //     }
-    // });
-    
     $(".wrapper-subnav").affix({
         offset: {
-            top: $('#banner').height()
+            top: $('.bg-banner').height()
         }
     });
     
-    $("#topnavbar").height($(".wrapper-subnav").height());
+    $("#topnavbar").height($(".wrapper-subnav").height() + $(".bg-banner").height());
     
     
-
     $('.product-wrapper').each(function () {
         var salePrice = $(this).find('.sale-price');        // target to center price vertically if no retail price
         var retailValue = $(this).find('.retail-price');
