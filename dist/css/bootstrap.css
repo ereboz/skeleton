@@ -6755,15 +6755,26 @@ button.close {
   }
 }
 /* ==========================================================================
-Section:
-// Bootstrap LESS variables to reference
+    Bootstrap LESS variables to reference
+    
 // @screen-xs             480px;
 // @screen-tablet         768px
 // @screen-desktop        992px
 // @screen-lg-desktop     1200px
 
-// Custom to fit footer better on Nexus 10 @800px
-// bootstrap default for tablet is 768px
+............................................................
+
+    Use Bootstraps column mixin's and not pollute the html file with col-md-4, etc.
+    
+.make-xs-column = @screen-xs     =  480px;
+.make-sm-column = @screen-sm-min = 768px;
+.make-md-column = @screen-md-min = 992px;
+.make-lg-column = @screen-lg-min = 1200px;
+
+@phone: ~"(min-width: 480px)";
+@tablet: ~"(min-width: 768px)";
+@desktop: ~"(min-width: 992px)";
+@desktop-large: ~"(min-width: 1200px)";
 ========================================================================== */
 /* Sub-section: LESS variables for this page: index.html
 ========================================================================== */
@@ -6945,30 +6956,224 @@ body {
 .main-wrapper {
   min-height: 600px;
 }
-.home-wrapper {
+/* ==========================================================================
+    Adding Bootstrap Styles in the DOM */
+.hp-main {
+  background-color: #e8e1e1;
+  border: 1px dotted black;
+}
+@media (min-width: 768px) {
+  .hp-main {
+    border: 4px dotted black;
+  }
+}
+@media (min-width: 992px) {
+  .hp-main {
+    border: 8px dotted black;
+  }
+}
+.hp-aside {
+  border: 1px dotted black;
+}
+@media (min-width: 768px) {
+  .hp-aside {
+    border: 4px dotted black;
+  }
+}
+@media (min-width: 992px) {
+  .hp-aside {
+    border: 8px dotted black;
+  }
+}
+/* ==========================================================================
+    Option 1 */
+.hp-main1 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  border: 1px solid #000;
+  background-color: #e8e1e1;
+  border: 1px dotted red;
+}
+@media (min-width: 768px) {
+  .hp-main1 {
+    border: 4px dotted red;
+  }
 }
 @media (min-width: 992px) {
-  .home-wrapper {
+  .hp-main1 {
+    border: 8px dotted red;
+  }
+}
+@media (min-width: 768px) {
+  .hp-main1 {
     float: left;
     width: 66.66666667%;
   }
 }
-.home-aside-wrapper {
+@media (min-width: 992px) {
+  .hp-main1 {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+.hp-aside1 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-  border: 1px solid #000;
+  border: 1px dotted red;
+}
+@media (min-width: 768px) {
+  .hp-aside1 {
+    border: 4px dotted red;
+  }
 }
 @media (min-width: 992px) {
-  .home-aside-wrapper {
+  .hp-aside1 {
+    border: 8px dotted red;
+  }
+}
+@media (min-width: 768px) {
+  .hp-aside1 {
     float: left;
     width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .hp-aside1 {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+/* ==========================================================================
+    Option 2 */
+.hp-main2 {
+  background-color: #e8e1e1;
+  border: 1px dotted blue;
+}
+@media (min-width: 768px) {
+  .hp-main2 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 4px dotted blue;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .hp-main2 {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .hp-main2 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 8px dotted blue;
+  }
+}
+@media (min-width: 992px) and (min-width: 992px) {
+  .hp-main2 {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+.hp-aside2 {
+  border: 1px dotted blue;
+}
+@media (min-width: 768px) {
+  .hp-aside2 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 4px dotted blue;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .hp-aside2 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .hp-aside2 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: 8px dotted blue;
+  }
+}
+@media (min-width: 992px) and (min-width: 992px) {
+  .hp-aside2 {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+/* ==========================================================================
+    Option 3 BEST Option */
+.hp-main3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #e8e1e1;
+  border: 1px dotted green;
+}
+@media (min-width: 768px) {
+  .hp-main3 {
+    border: 4px dotted green;
+  }
+}
+@media (min-width: 992px) {
+  .hp-main3 {
+    border: 8px dotted green;
+  }
+}
+@media (min-width: 768px) {
+  .hp-main3 {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .hp-main3 {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+.hp-aside3 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border: 1px dotted green;
+}
+@media (min-width: 768px) {
+  .hp-aside3 {
+    border: 4px dotted green;
+  }
+}
+@media (min-width: 992px) {
+  .hp-aside3 {
+    border: 8px dotted green;
+  }
+}
+@media (min-width: 768px) {
+  .hp-aside3 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .hp-aside3 {
+    float: left;
+    width: 16.66666667%;
   }
 }
 .page-separator {

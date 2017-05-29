@@ -1,17 +1,31 @@
 //* Created by javaBoxer on 3/23/2017.
 
 /* ==========================================================================
-Section:
-// Bootstrap LESS variables to reference
+    Bootstrap LESS variables to reference
+    
 // @screen-xs             480px;
 // @screen-tablet         768px
 // @screen-desktop        992px
 // @screen-lg-desktop     1200px
 
-// Custom to fit footer better on Nexus 10 @800px
-// bootstrap default for tablet is 768px
-========================================================================== */
+............................................................
 
+    Use Bootstraps column mixin's and not pollute the html file with col-md-4, etc.
+    
+.make-xs-column = @screen-xs     =  480px;
+.make-sm-column = @screen-sm-min = 768px;
+.make-md-column = @screen-md-min = 992px;
+.make-lg-column = @screen-lg-min = 1200px;
+
+@phone: ~"(min-width: 480px)";
+@tablet: ~"(min-width: 768px)";
+@desktop: ~"(min-width: 992px)";
+@desktop-large: ~"(min-width: 1200px)";
+========================================================================== */
+@phone: ~"(min-width: 480px)";
+@tablet: ~"(min-width: 768px)";
+@desktop: ~"(min-width: 992px)";
+@desktop-large: ~"(min-width: 1200px)";
 
 /* Sub-section: LESS variables for this page: index.html
 ========================================================================== */
@@ -264,14 +278,134 @@ body {
     min-height: 600px;
 }
 
-.home-wrapper {
-    .make-md-column(8);
-    border: 1px solid @black;
+/* ==========================================================================
+    Adding Bootstrap Styles in the DOM */
+
+.hp-main {
+    border: 1px dotted black;
+    background-color: @gray-superlight;
+    
+    @media (min-width: @screen-tablet) {
+        border: 4px dotted black;
+    }
+    
+    @media (min-width: @screen-desktop) {
+        border: 8px dotted black;
+    }
 }
 
-.home-aside-wrapper {
-    .make-md-column(4);
-    border: 1px solid @black;
+.hp-aside {
+    border: 1px dotted black;
+    
+    @media (min-width: @screen-tablet) {
+        border: 4px dotted black;
+    }
+    
+    @media (min-width: @screen-desktop) {
+        border: 8px dotted black;
+    }
+}
+
+/* ==========================================================================
+    Option 1 */
+
+.hp-main1 {
+    border: 1px dotted red;
+    background-color: @gray-superlight;
+    
+    @media (min-width: @screen-tablet) {
+        border: 4px dotted red;
+    }
+    
+    @media (min-width: @screen-desktop) {
+        border: 8px dotted red;
+    }
+    
+    .make-sm-column(8);
+    .make-md-column(10);
+}
+
+.hp-aside1 {
+    border: 1px dotted red;
+    
+    @media (min-width: @screen-tablet) {
+        border: 4px dotted red;
+    }
+    
+    @media (min-width: @screen-desktop) {
+        border: 8px dotted red;
+    }
+    
+    .make-sm-column(4);
+    .make-md-column(2);
+}
+
+
+/* ==========================================================================
+    Option 2 */
+
+.hp-main2 {
+    border: 1px dotted blue;
+    background-color: @gray-superlight;
+    
+    @media @tablet {
+        .make-sm-column(8);
+        border: 4px dotted blue;
+    }
+    
+    @media @desktop {
+        .make-md-column(10);
+        border: 8px dotted blue;
+    }
+    
+}
+
+.hp-aside2 {
+    border: 1px dotted blue;
+    
+    @media @tablet {
+        .make-sm-column(4);
+        border: 4px dotted blue;
+    }
+    
+    @media @desktop {
+        .make-md-column(2);
+        border: 8px dotted blue;
+    }
+}
+
+/* ==========================================================================
+    Option 3 BEST Option */
+
+.hp-main3 {
+    border: 1px dotted green;
+    background-color: @gray-superlight;
+    
+    @media @tablet {
+        border: 4px dotted green;
+    }
+    
+    @media @desktop {
+        border: 8px dotted green;
+    }
+    
+    .make-sm-column(8);
+    .make-md-column(10);
+}
+
+.hp-aside3 {
+    border: 1px dotted green;
+    
+    @media @tablet {
+        border: 4px dotted green;
+    }
+    
+    @media @desktop {
+        border: 8px dotted green;
+    }
+    
+    .make-sm-column(4);
+    .make-md-column(2);
 }
 
 .page-separator {
