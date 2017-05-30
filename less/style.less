@@ -41,6 +41,7 @@
 @bg-light-gray: #f5f7f9;
 @black: #000;
 @white: #fff;
+@light-gray: #f5f7f9;
 @light-gray1: #e0e0e0;
 @gray-superlight: #e8e1e1;
 @blue: #29ABE2;
@@ -56,7 +57,13 @@
 
 /* MIXIN'S
 ========================================================================== */
-
+.rounded-corners (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
 
 
 /* PAGE OVERRIDES
@@ -66,12 +73,7 @@ body {
     font-family: @font-secondary !important;
     //font-family: @font-src-sans !important;
 }
-// Define width of container for keyedalike specific wrapper
-@media (min-width: 1200px) {
-    .container {
-        width: 1012px;
-    }
-}
+
 
 .bg-banner {
     width: 100%;
@@ -281,131 +283,74 @@ body {
 /* ==========================================================================
     Adding Bootstrap Styles in the DOM */
 
-.hp-main {
-    border: 1px dotted black;
-    background-color: @gray-superlight;
-    
-    @media (min-width: @screen-tablet) {
-        border: 4px dotted black;
-    }
-    
-    @media (min-width: @screen-desktop) {
-        border: 8px dotted black;
-    }
-}
-
-.hp-aside {
-    border: 1px dotted black;
-    
-    @media (min-width: @screen-tablet) {
-        border: 4px dotted black;
-    }
-    
-    @media (min-width: @screen-desktop) {
-        border: 8px dotted black;
-    }
-}
-
-/* ==========================================================================
-    Option 1 */
-
-.hp-main1 {
-    border: 1px dotted red;
-    background-color: @gray-superlight;
-    
-    @media (min-width: @screen-tablet) {
-        border: 4px dotted red;
-    }
-    
-    @media (min-width: @screen-desktop) {
-        border: 8px dotted red;
-    }
-    
-    .make-sm-column(8);
-    .make-md-column(10);
-}
-
-.hp-aside1 {
-    border: 1px dotted red;
-    
-    @media (min-width: @screen-tablet) {
-        border: 4px dotted red;
-    }
-    
-    @media (min-width: @screen-desktop) {
-        border: 8px dotted red;
-    }
-    
-    .make-sm-column(4);
-    .make-md-column(2);
-}
-
-
-/* ==========================================================================
-    Option 2 */
-
-.hp-main2 {
-    border: 1px dotted blue;
-    background-color: @gray-superlight;
-    
-    @media @tablet {
-        .make-sm-column(8);
-        border: 4px dotted blue;
-    }
-    
-    @media @desktop {
-        .make-md-column(10);
-        border: 8px dotted blue;
-    }
-    
-}
-
-.hp-aside2 {
-    border: 1px dotted blue;
-    
-    @media @tablet {
-        .make-sm-column(4);
-        border: 4px dotted blue;
-    }
-    
-    @media @desktop {
-        .make-md-column(2);
-        border: 8px dotted blue;
-    }
-}
-
 /* ==========================================================================
     Option 3 BEST Option */
 
-.hp-main3 {
+.col-hpi {
+    .rounded-corners();
     border: 1px dotted green;
-    background-color: @gray-superlight;
+    background-color: @light-gray;
+    padding: 5px;
+    margin: 5px;
+    height: 530px;
+    min-height: 530px;
+    
     
     @media @tablet {
-        border: 4px dotted green;
+
     }
     
     @media @desktop {
-        border: 8px dotted green;
+
     }
     
-    .make-sm-column(8);
-    .make-md-column(10);
+    .make-sm-column(2);
+    .make-md-column(2);
+    .make-lg-column(2);
 }
 
-.hp-aside3 {
-    border: 1px dotted green;
+.topic-heading {
+    border-bottom: 2px solid black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.topic-sub-heading {
+    border-bottom: 1px dotted gray;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom:25px;
+    padding-left: 5px;
     
-    @media @tablet {
-        border: 4px dotted green;
+    li {
+        a {
+            &:link {
+                color: @white;
+                text-decoration: none;
+            }
+            &:hover {
+                color: @gray-medium;
+            }
+            &:visited {
+                color: @white;
+            }
+            &:active {
+                color: @white;
+            }
+        }
     }
     
-    @media @desktop {
-        border: 8px dotted green;
+    a {
+        color: @white;
+        &:hover {
+            color: @blue;
+        }
     }
-    
-    .make-sm-column(4);
-    .make-md-column(2);
 }
 
 .page-separator {
