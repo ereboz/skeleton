@@ -1,39 +1,44 @@
-//* Created by javaBoxer on 3/23/2017.
+//* Created by javaBoxer on 6/01/2017.
 
+/* Developer Notes
+========================================================================== */
+
+//<editor-fold desc="Developer Notes">
 /* ==========================================================================
-    Bootstrap LESS variables to reference
-    
-// @screen-xs             480px;
-// @screen-tablet         768px
-// @screen-desktop        992px
-// @screen-lg-desktop     1200px
+Bootstrap LESS variables to reference
 
-............................................................
+@screen-xs             480px;
+@screen-tablet         768px
+@screen-desktop        992px
+@screen-lg-desktop     1200px
 
-    Use Bootstraps column mixin's and not pollute the html file with col-md-4, etc.
-    
 .make-xs-column = @screen-xs     =  480px;
 .make-sm-column = @screen-sm-min = 768px;
 .make-md-column = @screen-md-min = 992px;
 .make-lg-column = @screen-lg-min = 1200px;
 
-@phone: ~"(min-width: 480px)";
-@tablet: ~"(min-width: 768px)";
-@desktop: ~"(min-width: 992px)";
-@desktop-large: ~"(min-width: 1200px)";
-========================================================================== */
-@phone: ~"(min-width: 480px)";
-@tablet: ~"(min-width: 768px)";
-@desktop: ~"(min-width: 992px)";
-@desktop-large: ~"(min-width: 1200px)";
+Custom variables to make using column mixin's possible and keep the DOM
+unpolluted with (col-md-4 col-lg-6, etc.)
 
-/* Sub-section: LESS variables for this page: index.html
-========================================================================== */
+@phone-min: ~"(min-width: 480px)";
+@tablet-min: ~"(min-width: 768px)";
+@desktop-min: ~"(min-width: 992px)";
+@desktop-large-min: ~"(min-width: 1200px)";
 
-/* DEFINE OUR GLOBAL VARIABLES FOR KEYEDALIKE
+@phone-max: ~"(max-width: 480px)";
+@tablet-max: ~"(max-width: 768px)";
+@desktop-max: ~"(max-width: 992px)";
+@desktop-large-max: ~"(max-width: 1200px)";
 ========================================================================== */
 
-//<editor-fold desc="VARIABLES">
+//</editor-fold>
+
+
+/* Variable's
+========================================================================== */
+
+//<editor-fold desc="Variables">
+
 @font-subnav: "Bitter Regular", "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
 @font-nav: "Myriad Pro", Verdana, sans-serif;
 @font-roboto: "Roboto Condensed",sans-serif;
@@ -44,19 +49,32 @@
 @light-gray: #f5f7f9;
 @light-gray1: #e0e0e0;
 @gray-superlight: #e8e1e1;
+@light-gray2: #d2d2d2;
 @blue: #29ABE2;
 @cadetblue: #668bae;
 @gray-medium: #7b7a7a;
 @powder-blue: rgba(41, 171, 226, 0.06);
-@white-smoke: #f5f5f5;
-@med-gray: #616161;
 @dark-gray: #333;
 @screen-tablet-md-max: 800px;
 @screen-tablet-md-min: 780px;
+
+@phone-min: ~"(min-width: 480px)";
+@tablet-min: ~"(min-width: 768px)";
+@desktop-min: ~"(min-width: 992px)";
+@desktop-large-min: ~"(min-width: 1200px)";
+
+@phone-max: ~"(max-width: 480px)";
+@tablet-max: ~"(max-width: 768px)";
+@desktop-max: ~"(max-width: 992px)";
+@desktop-large-max: ~"(max-width: 1200px)";
+
 //</editor-fold>
 
-/* MIXIN'S
+
+/* Mixin'S
 ========================================================================== */
+
+//<editor-fold desc="Mixin's">
 .rounded-corners (@radius: 5px) {
     -webkit-border-radius: @radius;
     -moz-border-radius: @radius;
@@ -64,16 +82,25 @@
     -o-border-radius: @radius;
     border-radius: @radius;
 }
+//</editor-fold>
 
 
-/* PAGE OVERRIDES
+/* Global'S
 ========================================================================== */
+
+//<editor-fold desc="Global's">
 
 body {
     font-family: @font-secondary !important;
     //font-family: @font-src-sans !important;
 }
+//</editor-fold>
 
+
+/* Header Section
+========================================================================== */
+
+//<editor-fold desc="Header section">
 
 .bg-banner {
     width: 100%;
@@ -275,20 +302,22 @@ body {
         font-size: 16px;
     }
 }
+//</editor-fold>
 
+
+/* Main body section
+========================================================================== */
+
+//<editor-fold desc="Main body">
 .main-wrapper {
     min-height: 600px;
 }
 
-/* ==========================================================================
-    Adding Bootstrap Styles in the DOM */
-
-/* ==========================================================================
-    Option 3 BEST Option */
 
 .col-hpi {
+    display: block;
     .rounded-corners();
-    border: 1px dotted green;
+    border: 1px dotted @light-gray2;
     background-color: @light-gray;
     padding: 5px;
     margin: 5px;
@@ -296,12 +325,12 @@ body {
     min-height: 530px;
     
     
-    @media @tablet {
-
+    @media @tablet-max {
+    
     }
     
-    @media @desktop {
-
+    @media @desktop-min {
+    
     }
     
     .make-sm-column(2);
@@ -358,7 +387,13 @@ ul {
     margin-bottom: 40px;
 }
 
+//</editor-fold>
 
+
+/* Footer section
+========================================================================== */
+
+//<editor-fold desc="Footer Section">
 .container-footer {
 	background-color: @dark-gray;
 }
@@ -519,4 +554,4 @@ ul {
 
 	}
 }
-
+//</editor-fold>
