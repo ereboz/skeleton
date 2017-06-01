@@ -6991,6 +6991,31 @@ body {
     width: 16.66666667%;
   }
 }
+.col-hpi [class^="wrapper"] ul {
+  padding-left: 5px;
+  margin-bottom: 25px;
+  margin-left: 0;
+  list-style: none;
+}
+.col-hpi [class^="wrapper"] ul li a:link {
+  color: #7b7a7a;
+  text-decoration: none;
+}
+.col-hpi [class^="wrapper"] ul li a:hover {
+  color: #555;
+}
+.col-hpi [class^="wrapper"] ul li a:visited {
+  color: #f5f7f9;
+}
+.col-hpi [class^="wrapper"] ul li a:active {
+  color: #7b7a7a;
+}
+.col-hpi [class^="wrapper"] ul a {
+  color: #fff;
+}
+.col-hpi [class^="wrapper"] ul a:hover {
+  color: #29abe2;
+}
 .topic-heading {
   margin-bottom: 20px;
   font-size: 24px;
@@ -7000,31 +7025,6 @@ body {
   margin-bottom: 20px;
   font-size: 20px;
   border-bottom: 1px dotted gray;
-}
-ul {
-  padding-left: 5px;
-  margin-bottom: 25px;
-  margin-left: 0;
-  list-style: none;
-}
-ul li a:link {
-  color: #fff;
-  text-decoration: none;
-}
-ul li a:hover {
-  color: #7b7a7a;
-}
-ul li a:visited {
-  color: #fff;
-}
-ul li a:active {
-  color: #fff;
-}
-ul a {
-  color: #fff;
-}
-ul a:hover {
-  color: #29abe2;
 }
 .page-separator {
   margin-bottom: 40px;

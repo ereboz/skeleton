@@ -313,17 +313,19 @@ body {
     min-height: 600px;
 }
 
+.page-wrapper {
+
+}
 
 .col-hpi {
     display: block;
-    .rounded-corners();
     border: 1px dotted @light-gray2;
     background-color: @light-gray;
     padding: 5px;
     margin: 5px;
     height: 530px;
     min-height: 530px;
-    
+    .rounded-corners();
     
     @media @tablet-max {
     
@@ -338,6 +340,42 @@ body {
     .make-lg-column(2);
 }
 
+// Target the ul's only in the column with a class that begins with (wrapper-*)
+.col-hpi [class^="wrapper"] {
+    
+    ul {
+        list-style: none;
+        margin-left: 0;
+        margin-bottom:25px;
+        padding-left: 5px;
+        
+        li {
+            a {
+                &:link {
+                    color: @gray-medium;
+                    text-decoration: none;
+                }
+                &:hover {
+                    color: @gray;
+                }
+                &:visited {
+                    color: @light-gray;
+                }
+                &:active {
+                    color: @gray-medium;
+                }
+            }
+        }
+        
+        a {
+            color: @white;
+            &:hover {
+                color: @blue;
+            }
+        }
+    }
+}
+
 .topic-heading {
     border-bottom: 2px solid black;
     font-size: 24px;
@@ -350,37 +388,7 @@ body {
     margin-bottom: 20px;
 }
 
-ul {
-    list-style: none;
-    margin-left: 0;
-    margin-bottom:25px;
-    padding-left: 5px;
-    
-    li {
-        a {
-            &:link {
-                color: @white;
-                text-decoration: none;
-            }
-            &:hover {
-                color: @gray-medium;
-            }
-            &:visited {
-                color: @white;
-            }
-            &:active {
-                color: @white;
-            }
-        }
-    }
-    
-    a {
-        color: @white;
-        &:hover {
-            color: @blue;
-        }
-    }
-}
+
 
 .page-separator {
     border-bottom: 1px solid @light-gray1;
