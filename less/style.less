@@ -308,6 +308,10 @@ body {
 /* Main body section
 ========================================================================== */
 
+.container-wrapper {
+    width: 100%;
+}
+
 //<editor-fold desc="Main body">
 .main-wrapper {
     min-height: 600px;
@@ -317,6 +321,7 @@ body {
 
 }
 
+// 5 columns on homepage
 .col-hpi {
     display: block;
     border: 1px dotted @light-gray2;
@@ -335,10 +340,16 @@ body {
     
     }
     
-    .make-sm-column(2);
-    .make-md-column(2);
-    .make-lg-column(2);
+    .make-sm-column(2); // 768px
+    .make-md-column(2); // 992px
+    .make-lg-column(2); // 1200px
+    
+    // offset the first column because the cols are not even num for bs
+    &:first-child {
+        .make-md-column-offset(1);
+    }
 }
+
 
 // Target the ul's only in the column with a class that begins with (wrapper-*)
 .col-hpi [class^="wrapper"] {
@@ -352,17 +363,17 @@ body {
         li {
             a {
                 &:link {
-                    color: @gray-medium;
+                    color: @blue;
                     text-decoration: none;
                 }
                 &:hover {
                     color: @gray;
                 }
                 &:visited {
-                    color: @light-gray;
+                    color: @gray;
                 }
                 &:active {
-                    color: @gray-medium;
+                    color: @blue;
                 }
             }
         }
